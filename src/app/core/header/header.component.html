@@ -1,0 +1,45 @@
+<header>
+    <div class="mini-navbar-wrap">
+        <div class="container">
+        <div class="logo-wrap">
+            <p class="logo"><span class="logo">Hursa Knives</span></p>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a routerLink="/">Начало</a>
+                </li>
+                <li>
+                    <a href=#>Продукти</a>
+                </li>
+                <li>
+                    <a  href=#>За нас</a>
+                </li>
+                <li>
+                    <a  href=#>Контакти</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+        <div class="mini-navbar">
+            <ul *ngIf="true" >
+                <li>
+                    <a routerLink="/auth/login">Login</a>
+                </li>
+                <li>
+                    <a routerLink="/auth/register">Register</a>
+                </li>
+            </ul>
+            <ul *ngIf="" >
+                <li>
+                    <a routerLink="/auth/profile">user's Profile</a>
+                </li>
+                <li>
+                    <a routerLink="/auth/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</header>

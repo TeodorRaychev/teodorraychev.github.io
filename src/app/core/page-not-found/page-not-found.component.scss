@@ -1,0 +1,52 @@
+.mainbox {
+    margin: auto;
+    height: 30rem;
+    width: 50rem;
+    position: relative;
+  }
+  
+    .err {
+      color: #555;
+      font-family: 'Merriweather', sans-serif;
+      font-size: 11rem;
+      position:absolute;
+      left: 14rem;
+      top: 2rem;
+    }
+  
+  .fa-brands.fa-creative-commons-zero {
+    position: absolute;
+    font-size: 10rem;
+    left: 22rem;
+    top: 6.5rem;
+    color: #555;
+  }
+  
+   .err2 {
+      color: #555;
+      font-family: 'Merriweather', sans-serif;
+      font-size: 11rem;
+      position:absolute;
+      left: 32rem;
+      top: 2rem;
+    }
+  
+  .msg {
+      text-align: center;
+      font-family: 'Merriweather', sans-serif;
+      font-size: 1.6rem;
+      position:absolute;
+      left: 15rem;
+      top: 19rem;
+      width: 25rem;
+    }
+  
+  a {
+    text-decoration: none;
+    color: #555;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
