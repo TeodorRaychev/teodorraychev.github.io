@@ -1,6 +1,6 @@
 div {
     width: 100%;
-    height: 94vh;
+    height: 93.2vh;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -15,23 +15,24 @@ p {
     color: #eee;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-size: 1.75rem;
+    margin-left: 6rem;
     width: 60vw;
 }
 
-.first{
-    margin-left: 4rem;
-}
+// .first{
+//     margin-left: 4rem;
+// }
 
-.second{
-    margin-left: 6rem;
-}
+// .second{
+//     margin-left: 6rem;
+// }
 
-.third{
-    margin-left: 8rem;
-}
-.fourth{
-    margin-left: 10rem;
-}
-.fifth{
-    margin-left: 12rem;
-}
+// .third{
+//     margin-left: 8rem;
+// }
+// .fourth{
+//     margin-left: 10rem;
+// }
+// .fifth{
+//     margin-left: 12rem;
+// }
