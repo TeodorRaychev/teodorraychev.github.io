@@ -1,7 +1,26 @@
-div {
-display: flex;
-}
-
-img {
-    width: 30%;
-}
+.container {
+    display: flex;
+    width: 90vw;
+    height: 90 vh;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-items: center;
+    margin: auto;
+    margin-top: 5rem;
+  }
+  
+  .text-container {
+    width: 35vw;
+    height: 35vh;
+    border: 2px solid darkgray;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 1rem 0.5rem rgba(0,0,0,0.3);
+  }
+  
+  img {
+    width: 35vw;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 1rem 1rem rgba(0,0,0,0.3);
+  }
+  
