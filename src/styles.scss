@@ -117,7 +117,19 @@ button:hover {
 
 @media (min-width: 400px) {
   html {
+      font-size: 9px;
+  }
+}
+
+@media (min-width: 450px) {
+  html {
       font-size: 10px;
+  }
+}
+
+@media (min-width: 500px) {
+  html {
+      font-size: 11px;
   }
 }
 
