@@ -24,18 +24,18 @@
         <div class="mini-navbar">
             <ul *ngIf="!isLoggedIn" >
                 <li>
-                    <a routerLink="/auth/login">Login</a>
+                    <a routerLink="/auth/login">Вход</a>
                 </li>
                 <li>
-                    <a routerLink="/auth/register">Register</a>
+                    <a routerLink="/auth/register">Регистрация</a>
                 </li>
             </ul>
             <ul *ngIf="isLoggedIn" >
                 <li>
-                    <a routerLink="/auth/profile">user's Profile</a>
+                    <a routerLink="/auth/profile">Профил</a>
                 </li>
                 <li>
-                    <a routerLink="/auth/logout">Logout</a>
+                    <a routerLink="/auth/logout">Изход</a>
                 </li>
             </ul>
         </div>

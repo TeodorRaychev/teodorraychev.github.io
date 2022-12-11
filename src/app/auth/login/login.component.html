@@ -1,7 +1,7 @@
 <form #form="ngForm" class="login" (ngSubmit)="loginHandler(form)">
 
     <fieldset>
-        <h2>Login Form</h2>
+        <h2>Форма за вход</h2>
 
         <p class="field field-icon">
             <label for="email"><span><i class="fas fa-envelope"></i></span></label>
@@ -9,10 +9,10 @@
         </p>
         <ng-container *ngIf="emailInput.touched">
             <p class="error" *ngIf="emailInput.errors?.['required']">
-                Email is required!
+                Имейлът е задължителен!
             </p>
             <p class="error" *ngIf="emailInput.errors?.['appEmailValidator']">
-                Email is not valid!
+                Имейлът е невалиден!
             </p>
         </ng-container>
 
@@ -22,18 +22,18 @@
         </p>
         <ng-container *ngIf="passwordInput.touched">
             <p class="error" *ngIf="passwordInput.errors?.['required']">
-                Password is required!
+                Паролата е задължителна!
             </p>
             <p class="error" *ngIf="passwordInput.errors?.['minlength']">
-                Password must be at least 5 characters!
+                Паролата трябва да съдържа 5 или повече символа!
             </p>
         </ng-container>
 
-        <button [ngClass]="{'btn-active': !form.invalid}" [disabled]="form.invalid" class="login-btn">Login</button>
+        <button [ngClass]="{'btn-active': !form.invalid}" [disabled]="form.invalid" class="login-btn">Вход</button>
 
         <p class="text-center">
-            Don't have an account?
-            <a routerLink="/auth/register">Register</a>
+            Нямате акаунт?
+            <a routerLink="/auth/register">Регистрация</a>
         </p>
 
     </fieldset>

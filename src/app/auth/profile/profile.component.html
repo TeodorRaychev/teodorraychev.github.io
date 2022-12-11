@@ -1,18 +1,18 @@
 <div class="profile">
   <img src="./assets/profile.png" alt="default user" />
-  <h3>User Info:</h3>
+  <h3>Информация за потрбителя:</h3>
   <form [formGroup]="form" (ngSubmit)="saveProfile()">
     <div class="flex">
-      <p>Username:</p>
+      <p>Потребителско Име:</p>
       <p>
         <ng-container *ngIf="showEditMode" >
           <input type="text" formControlName="username" minlength="5"/>
           <ng-container *ngIf="form.get('username')?.touched || formSubmitted">
             <p *ngIf="form.get('username')?.errors?.['required']" class="error">
-                Username is required!
+                Потребителското име е задължително!
             </p>
             <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">
-                Username must be at least {{form.get('username')?.errors?.['minlength']['requiredLength']}} characters!
+                Потребителското име трябва да съдържа {{form.get('username')?.errors?.['minlength']['requiredLength']}} или повече символа!
             </p>
           </ng-container>
         </ng-container>
@@ -23,16 +23,16 @@
       </p>
     </div>
     <div class="flex">
-      <p>Email:</p>
+      <p>Имейл:</p>
       <p>
         <ng-container *ngIf="showEditMode" >
           <input type="text" formControlName="email" />
           <ng-container *ngIf="form.get('email')?.touched || formSubmitted || !form.touched || form.touched">
             <p class="error" *ngIf="form.get('email')?.errors?.['required']">
-                Email is required!
+                Имейлът е задължителен!
             </p>
             <p class="error" *ngIf="form.get('email')?.errors?.['appEmailValidator']">
-                Email is not valid!
+                Имейлът е невалиден!
             </p>
           </ng-container>
         </ng-container>
@@ -43,7 +43,7 @@
       </p>
     </div>
     <div class="flex">
-      <p>Phone:</p>
+      <p>Телефон:</p>
       <p>
         <ng-container *ngIf="showEditMode">
           <div>
