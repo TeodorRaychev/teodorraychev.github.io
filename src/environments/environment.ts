@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiURL: "https://factualstick.backendless.app/api",
+  url: "https://eu-api.backendless.com/B3E0BFA1-54F7-45D4-FFE0-2F66D335E900/D3E52272-4DC2-4860-A30D-D858C0B79A25"
 };
 
 /*

@@ -103,7 +103,25 @@ button:hover {
     cursor: pointer;
 }
 
-@media (max-width: 800px) {
+@media (min-width: 200px) {
+  html {
+      font-size: 6px;
+  }
+}
+
+@media (min-width: 325px) {
+  html {
+      font-size: 8px;
+  }
+}
+
+@media (min-width: 400px) {
+  html {
+      font-size: 10px;
+  }
+}
+
+@media (min-width: 600px) {
     html {
         font-size: 12px;
     }

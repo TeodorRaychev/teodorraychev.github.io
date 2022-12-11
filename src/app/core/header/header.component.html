@@ -13,16 +13,16 @@
                     <a href=#>Продукти</a>
                 </li>
                 <li>
-                    <a  href=#>За нас</a>
+                    <a  routerLink="/about-us">За нас</a>
                 </li>
                 <li>
-                    <a  href=#>Контакти</a>
+                    <a  routerLink="/contacts">Контакти</a>
                 </li>
             </ul>
         </nav>
     </div>
         <div class="mini-navbar">
-            <ul *ngIf="true" >
+            <ul *ngIf="!isLoggedIn" >
                 <li>
                     <a routerLink="/auth/login">Login</a>
                 </li>
@@ -30,7 +30,7 @@
                     <a routerLink="/auth/register">Register</a>
                 </li>
             </ul>
-            <ul *ngIf="" >
+            <ul *ngIf="isLoggedIn" >
                 <li>
                     <a routerLink="/auth/profile">user's Profile</a>
                 </li>

@@ -1,0 +1,40 @@
+<form #form="ngForm" class="login" (ngSubmit)="loginHandler(form)">
+
+    <fieldset>
+        <h2>Login Form</h2>
+
+        <p class="field field-icon">
+            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+            <input #emailInput="ngModel" [ngClass]="{'input-error': emailInput.errors && emailInput.touched}" type="email" ngModel required [appEmail]="appEmailDomains" name="email" id="email" placeholder="john.doe@gmail.com" >
+        </p>
+        <ng-container *ngIf="emailInput.touched">
+            <p class="error" *ngIf="emailInput.errors?.['required']">
+                Email is required!
+            </p>
+            <p class="error" *ngIf="emailInput.errors?.['appEmailValidator']">
+                Email is not valid!
+            </p>
+        </ng-container>
+
+        <p class="field field-icon">
+            <label for="password"><span><i class="fas fa-lock"></i></span></label>
+            <input #passwordInput="ngModel" type="password" [ngClass]="{'input-error': passwordInput.errors && passwordInput.touched}" name="password" ngModel required minlength="5" id="password" placeholder="******">
+        </p>
+        <ng-container *ngIf="passwordInput.touched">
+            <p class="error" *ngIf="passwordInput.errors?.['required']">
+                Password is required!
+            </p>
+            <p class="error" *ngIf="passwordInput.errors?.['minlength']">
+                Password must be at least 5 characters!
+            </p>
+        </ng-container>
+
+        <button [ngClass]="{'btn-active': !form.invalid}" [disabled]="form.invalid" class="login-btn">Login</button>
+
+        <p class="text-center">
+            Don't have an account?
+            <a routerLink="/auth/register">Register</a>
+        </p>
+
+    </fieldset>
+</form>

@@ -5,6 +5,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ErrorComponent } from './error/error.component';
+import { SharedModule } from '../shared/shared.module';
+import { ContactsComponent } from './contacts/contacts.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -13,17 +17,22 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorComponent,
+    ContactsComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorComponent
   ],
 })
 export class CoreModule { }
