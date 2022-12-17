@@ -3,7 +3,7 @@
     max-width: 500px;
     margin: 2em auto 1rem;
     padding: .5em;
-    border: .3em solid rgb(0, 212, 255);
+    border: .3em solid #cecece;
     border-radius: .5rem;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #444;
@@ -76,11 +76,22 @@ input {
     border-radius: 0.17em;
 }
 
+.edit-button {
+    background-color: #777777;
+}
 .red-button {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.40);
     margin-right: .5em;
 }
 
+.red-button:hover{
+    background-color: red;
+}
+
 .green-button {
+    background-color: rgba(0, 128, 0, 0.40);
+}
+
+.btn-active:hover{
     background-color: green;
 }

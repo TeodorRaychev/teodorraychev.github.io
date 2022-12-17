@@ -72,7 +72,7 @@
     </ng-container>
 
     <ng-template #edit>
-      <button class="green-button" type="submit">Save</button>
+      <button [ngClass]="{'btn-active': !form.invalid}" class="green-button" type="submit">Save</button>
     </ng-template>
 
     <ng-template #nonEdit>

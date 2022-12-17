@@ -3,6 +3,11 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { appEmailDomains } from 'src/app/shared/constants';
 import { appEmailValidator } from 'src/app/shared/validators';
 import { AuthService } from '../auth.service';
+import Backendless from 'backendless';
+
+class AppUser extends Backendless.User {
+  tel?: string;
+}
 
 @Component({
   selector: 'app-profile',
@@ -14,10 +19,10 @@ export class ProfileComponent {
   formSubmitted = false;
 
   get user() {
-    const { objectId, username, email, tel: telephone } = this.authService.user!;
+    const { username, email, tel: telephone } = Backendless.UserService.currentUser as AppUser;
     var ext = '+359';
-    var tel = ['']
-    if(telephone){
+    var tel = [''];
+    if (telephone) {
       [ext, ...tel] = telephone.split(' ');
     }
     return {
@@ -30,10 +35,12 @@ export class ProfileComponent {
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
     // this.form.setValue(this.user);
-    `${this.user.username}`;
-    `${this.user.email}`;
-    `${this.user.ext}`;
-    `${this.user.tel}`;
+    this.form.setValue({
+      username: this.user.username!,
+      email: this.user.email!,
+      ext: this.user.ext,
+      tel: this.user.tel,
+    });
   }
   form = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
@@ -44,7 +51,7 @@ export class ProfileComponent {
 
   toggleEditMode(): void {
     this.showEditMode = !this.showEditMode;
-    if(this.showEditMode) {
+    if (this.showEditMode) {
       this.formSubmitted = false;
     }
   }
@@ -56,8 +63,8 @@ export class ProfileComponent {
     }
     const { username, email, ext, tel } = this.form.value;
 
-    this.authService.editProfile(username!, email!, ext + ' ' + tel,).subscribe(() => {
-      this.toggleEditMode();
-    })
+    this.authService.editProfile(username!, email!, ext + ' ' + tel);
+
+    this.toggleEditMode();
   }
 }
