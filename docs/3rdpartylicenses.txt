@@ -13,6 +13,9 @@ MIT
 @angular/router
 MIT
 
+backendless
+ISC
+
 rxjs
 Apache-2.0
                                Apache License

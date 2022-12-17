@@ -9,15 +9,8 @@ import { AuthService } from '../auth.service';
 })
 export class LogoutComponent {
   constructor(private router: Router, private authService: AuthService) {
-    this.authService.logout().subscribe({
-      next: () => {
-        this.authService.user = null;
-        this.router.navigate(['/auth/login']);
-      },
-      error: () => {
-        this.authService.user = null;
-        this.router.navigate(['/auth/login']);
-      },
-    });
+    this.authService.logout();
+    this.authService.user = null;
+    this.router.navigate(['/auth/login']);
   }
 }

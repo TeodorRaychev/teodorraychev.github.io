@@ -15,9 +15,12 @@ export class ProfileComponent {
 
   get user() {
     const { objectId, username, email, tel: telephone } = this.authService.user!;
-    const [ext, ...tel] = telephone.split(' ');
+    var ext = '+359';
+    var tel = ['']
+    if(telephone){
+      [ext, ...tel] = telephone.split(' ');
+    }
     return {
-      objectId,
       username,
       email,
       tel: tel.join(' '),
@@ -26,11 +29,11 @@ export class ProfileComponent {
   }
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
-    this.form.setValue(this.user);
-    // `${this.user.username}`
-    // `${this.user.email}`
-    // `${this.user.ext}`
-    // `${this.user.tel}`
+    // this.form.setValue(this.user);
+    `${this.user.username}`;
+    `${this.user.email}`;
+    `${this.user.ext}`;
+    `${this.user.tel}`;
   }
   form = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
@@ -53,7 +56,7 @@ export class ProfileComponent {
     }
     const { username, email, ext, tel } = this.form.value;
 
-    this.authService.editProfile(this.user.objectId, username!, email!, ext + ' ' + tel,).subscribe(() => {
+    this.authService.editProfile(username!, email!, ext + ' ' + tel,).subscribe(() => {
       this.toggleEditMode();
     })
   }

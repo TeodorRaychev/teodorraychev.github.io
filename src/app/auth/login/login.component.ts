@@ -27,19 +27,25 @@ export class LoginComponent {
       email,
        password
     } = form.value;
-    this.authService
-      .login(    
-        email!,
-        password!,
-      )
-      .subscribe((user) => {
-        this.authService.user = user;
-        console.log(user)
-        if(this.authService.user.objectId === null){
-          return
-        }
-        else{ this.router.navigate(['/']); }  
-      });
+    // this.authService
+    //   .login(    
+    //     email!,
+    //     password!,
+    //   )
+    //   .subscribe((user) => {
+    //     this.authService.user = user;
+    //     console.log(user)
+    //     if(this.authService.user.objectId === null){
+    //       return
+    //     }
+    //   });
+    
+    Backendless.UserService.login(email, password, true)
+    .then( function( loggedInUser ) {
+    })
+  .catch( function( error ) {
+    });
+    this.router.navigate(['/']);
     const returnUrl =
       this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
     this.router.navigate([returnUrl]);
