@@ -5,7 +5,10 @@
 export const environment = {
   production: false,
   apiURL: "https://factualstick.backendless.app/api",
-  url: "https://eu-api.backendless.com/B3E0BFA1-54F7-45D4-FFE0-2F66D335E900/D3E52272-4DC2-4860-A30D-D858C0B79A25"
+  backendless: {
+    APP_ID: 'C7AAAD50-D4AF-FC0C-FF2C-3296EC092800',
+    API_KEY: 'AE50EECB-67A4-435D-FFCC-C93A14C11800'
+  }
 };
 
 /*

@@ -44,3 +44,16 @@
     font-family:  Nunito, sans-serif;
     font-weight: 500;
   }
+
+  @media (orientation: portrait) {
+    .container{
+      flex-direction: column;
+      gap: 2rem;
+    }
+    img{
+      width: 65vw;
+    }
+    .text-container{
+      width: 65vw;
+    }
+  }

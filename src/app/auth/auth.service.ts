@@ -37,7 +37,6 @@ export class AuthService implements OnDestroy {
     username: string,
     email: string,
     password: string,
-    rePassword: string,
     tel?: string
   ) {
     return this.http
@@ -45,7 +44,6 @@ export class AuthService implements OnDestroy {
         username,
         email,
         password,
-        rePassword,
         tel,
       })
       .pipe(tap((user) => this.user$$.next(user)));

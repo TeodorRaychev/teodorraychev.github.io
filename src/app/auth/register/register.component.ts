@@ -52,7 +52,6 @@ export class RegisterComponent {
         username!,
         email!,
         password!,
-        rePassword!,
         tel
           ? [ext!.startsWith('00') ? ext?.replace('00', '+') : ext, tel].join(
               ' '
