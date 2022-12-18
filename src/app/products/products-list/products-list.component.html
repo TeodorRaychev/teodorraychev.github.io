@@ -3,7 +3,7 @@
     <img src="{{ product.picture_url }}" alt="product-img" />
     <div class="info-container">
       <h2 class="title">{{ product.product_name }}</h2>
-      <p class="product-info">{{product.product_info}}</p>
+      <p class="product-info">{{product.product_info | shorten: 50 }}</p>
       <button routerLink="/products/detail/{{product.objectId}}" class="details-btn">Детайли</button>
     </div>
   </div>

@@ -1,56 +1,63 @@
 .container {
-    margin: auto;
-    width: 75vw;
-    height: 75vh;
-    display: flex;
-    flex-direction: row;
-    background-color: #cecece;
-    border-radius: 1rem;
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-    gap: 2rem;
-    overflow: hidden;
-    align-content: space-between;
-    justify-content: space-between;
-  }
-  
-  .info-container {
-    padding: 0.5rem, 6rem;
-    width: 40vw;
-    display: flex;
+  margin: auto;
+  width: 85vw;
+  height: 65vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #cecece;
+  border-radius: 1rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  gap: 2rem;
+  overflow: hidden;
+  align-content: space-between;
+  justify-content: space-between;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.info-container {
+  padding: 0.5rem, 6rem;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  align-content: space-around;
+  gap: 0.5rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  margin-right: 3rem;
+}
+h2 {
+  width: 30vw;
+  text-align: center;
+}
+
+p {
+  width: 25vw;
+  text-align: center;
+}
+
+@media (orientation: portrait) {
+  .container {
     flex-direction: column;
-    align-items: center;
+    width: 65vw;
+    height: 75vh;
+    gap: 1rem;
+  }
+
+  .info-container {
+    width: 65vw;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
     justify-content: space-between;
-  
-    align-content: space-between;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    justify-items: space-between;
+    padding: 1rem;
+    gap: 2rem;
   }
-  
+
   p {
-    width: 25vw;
-    text-align: center;
+    width: 55vw;
   }
-  
-  @media (orientation: portrait) {
-      .container{
-          flex-direction: column;
-          width: 65vw;
-          height: 85vh;
-          gap: 1rem;
-      }
-  
-      .info-container{
-          width: 65vw;
-          margin-top: 1rem;
-          margin-bottom: 3rem;
-          justify-content: space-between;
-          justify-items: space-between;
-          padding: 1rem;
-          gap: 2rem;
-      }
-  
-      p {
-          width: 55vw;
-      }
-  }
+}

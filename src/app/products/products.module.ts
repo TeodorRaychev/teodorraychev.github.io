@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -13,7 +14,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }

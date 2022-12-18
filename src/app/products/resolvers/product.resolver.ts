@@ -5,7 +5,7 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
-import { from, Observable } from 'rxjs';
+import { from, Observable, take } from 'rxjs';
 import { IProduct } from '../../shared/interfaces';
 
 @Injectable({
@@ -23,19 +23,6 @@ export class ProductResolver implements Resolve<IProduct | null> {
       this.router.navigate(['products/products-list']);
       return null;
     }
-    from(Backendless.Data.of('products').findById(productId)).subscribe({
-      next: (value) => {
-        this.res = value as IProduct;
-      },
-      error: (err) => {
-        console.error(err);
-        this.res = null;
-        this.router.navigate(['products/products-list']);
-      },
-    });
-    if ( this.res === null){
-      this.router.navigate(['products/products-list']);
-    }
-    return this.res;
+    return Backendless.Data.of('products').findById<IProduct>({objectId: productId});
   }
 }

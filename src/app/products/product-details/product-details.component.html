@@ -1,4 +1,8 @@
-<ng-container >
+<ng-container *ngIf="!product">
+  loading...
+</ng-container>
+
+<ng-container *ngIf="product">
     <div class="container">
         <img src="{{ product!.picture_url }}" alt="product-img" />
         <div class="info-container">
