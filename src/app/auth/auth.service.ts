@@ -10,6 +10,8 @@ import {
 } from 'rxjs';
 import { IUser } from '../shared/interfaces';
 import Backendless from 'backendless';
+import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 class AppUser extends Backendless.User {
   tel?: string;
@@ -27,7 +29,6 @@ export class AuthService implements OnDestroy {
   // const user: AppUser = new AppUser();
 
   user: AppUser | null = null;
-  
 
   subscription: Subscription;
 
@@ -51,16 +52,27 @@ export class AuthService implements OnDestroy {
     });
   }
 
-  register(username: string, email: string, password: string, tel?: string) {
+  register(
+    form: FormGroup,
+    router: Router,
+    username: string,
+    email: string,
+    password: string,
+    tel?: string
+  ): null | any {
     const user: AppUser = new AppUser();
     user.email = email!;
     user.password = password!;
     user.username = username!;
+    user.tel = tel;
     var err = null;
     Backendless.UserService.register<AppUser>(user)
       .then((result: AppUser) => {
         console.log('Registered User:', result);
-        return this.login(email, password);
+        this.login(email, password);
+        form.reset();
+        router.navigate(['/']);
+        return null;
       })
       .catch((error) => {
         console.error('Can not Register User:', error.message);
@@ -80,7 +92,7 @@ export class AuthService implements OnDestroy {
       });
   }
 
-  async awaitGetProfile(){
+  async awaitGetProfile() {
     return await this.getProfile();
   }
 

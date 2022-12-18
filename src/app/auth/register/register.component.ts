@@ -36,35 +36,6 @@ export class RegisterComponent {
     private router: Router
   ) {}
 
-  // registerHandler() {
-  //   if (this.form.invalid) {
-  //     return;
-  //   }
-  //   const {
-  //     username,
-  //     email,
-  //     pass: { password, rePassword } = {},
-  //     ext,
-  //     tel,
-  //   } = this.form.value;
-  //   this.authService
-  //     .register(
-  //       username!,
-  //       email!,
-  //       password!,
-  //       tel
-  //         ? [ext!.startsWith('00') ? ext?.replace('00', '+') : ext, tel].join(
-  //             ' '
-  //           )
-  //         : undefined
-  //     )
-  //     .subscribe((user) => {
-  //       this.authService.user = user;
-  //       this.router.navigate(['/theme/recent']);
-  //     });
-  //   this.form.reset();
-  // }
-
   registerHandler() {
     if (this.form.invalid) {
       return;
@@ -76,23 +47,16 @@ export class RegisterComponent {
       ext,
       tel,
     } = this.form.value;
-    class AppUser extends Backendless.User {
-    }
+    class AppUser extends Backendless.User {}
 
-    const user: AppUser = new AppUser();
-    user.email = email!;
-    user.password = password!;
-    user.username = username!;
-    var err = null;
-    Backendless.UserService.register<AppUser>(user)
-      .then((result: AppUser) => console.log('Registered User:', result), err = null)
-      .catch((error) => {
-        console.error('Can not Register User:', error.message);
-        return error;
-      });
-    if (err === null) {
-      this.router.navigate(['/']);
-      this.form.reset();
-    }
+    const phone = '+359' + ' ' + tel;
+    const err = this.authService.register(
+      this.form,
+      this.router,
+      username!,
+      email!,
+      password!,
+      phone!
+    );
   }
 }
